@@ -5,8 +5,7 @@
  * Copyright 2014-2016 Wolf9466    <https://github.com/OhGodAPet>
  * Copyright 2016      Jay D Dee   <jayddee246@gmail.com>
  * Copyright 2017-2018 XMR-Stak    <https://github.com/fireice-uk>, <https://github.com/psychocrypt>
- * Copyright 2018      SChernykh   <https://github.com/SChernykh>
- * Copyright 2016-2019 XMRig       <https://github.com/xmrig>, <support@xmrig.com>
+ * Copyright 2016-2018 XMRig       <https://github.com/xmrig>, <support@xmrig.com>
  *
  *   This program is free software: you can redistribute it and/or modify
  *   it under the terms of the GNU General Public License as published by
@@ -22,8 +21,8 @@
  *   along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef XMRIG_XMRIG_H
-#define XMRIG_XMRIG_H
+#ifndef __XMRIG_H__
+#define __XMRIG_H__
 
 
 namespace xmrig
@@ -34,7 +33,7 @@ enum Algo {
     INVALID_ALGO = -1,
     CRYPTONIGHT,       /* CryptoNight (Monero) */
     CRYPTONIGHT_LITE,  /* CryptoNight-Lite (AEON) */
-    CRYPTONIGHT_HEAVY  /* CryptoNight-Heavy (RYO) */
+    CRYPTONIGHT_HEAVY  /* CryptoNight-Heavy (SUMO) */
 };
 
 
@@ -62,14 +61,10 @@ enum Variant {
     VARIANT_AUTO = -1, // Autodetect
     VARIANT_0    = 0,  // Original CryptoNight or CryptoNight-Heavy
     VARIANT_1    = 1,  // CryptoNight variant 1 also known as Monero7 and CryptoNightV7
-    VARIANT_TUBE = 2,  // Modified CryptoNight-Heavy (TUBE only)
+    VARIANT_IPBC = 2,  // Modified CryptoNight Lite variant 1 with XOR (IPBC/TUBE only)
     VARIANT_XTL  = 3,  // Modified CryptoNight variant 1 (Stellite only)
     VARIANT_MSR  = 4,  // Modified CryptoNight variant 1 (Masari only)
     VARIANT_XHV  = 5,  // Modified CryptoNight-Heavy (Haven Protocol only)
-    VARIANT_XAO  = 6,  // Modified CryptoNight variant 0 (Alloy only)
-    VARIANT_RTO  = 7,  // Modified CryptoNight variant 1 (Arto only)
-    VARIANT_2    = 8,  // CryptoNight variant 2
-    VARIANT_HALF = 9,  // CryptoNight variant 2 with half iterations (Masari/Stellite)
     VARIANT_MAX
 };
 
@@ -87,26 +82,7 @@ enum AesMode {
 };
 
 
-enum OclVendor {
-    OCL_VENDOR_UNKNOWN = -2,
-    OCL_VENDOR_MANUAL  = -1,
-    OCL_VENDOR_AMD     = 0,
-    OCL_VENDOR_NVIDIA  = 1,
-    OCL_VENDOR_INTEL   = 2
-};
-
-
-enum Assembly {
-    ASM_NONE,
-    ASM_AUTO,
-    ASM_INTEL,
-    ASM_RYZEN,
-    ASM_BULLDOZER,
-    ASM_MAX
-};
-
-
 } /* namespace xmrig */
 
 
-#endif /* XMRIG_XMRIG_H */
+#endif /* __XMRIG_H__ */
